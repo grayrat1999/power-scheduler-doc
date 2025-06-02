@@ -3,7 +3,7 @@
 ## 前置条件
 
 1. 使用 Java8 及以上
-2. 在控制台创建应用，获取 app-code 和 app-secret
+2. 在控制台创建应用, 获取 app-code 和 app-secret
 
 ## 依赖安装
 
@@ -26,10 +26,10 @@ power-scheduler-worker:
   app-code: demoApp
   # 在控制台创建应用后, app-secret由系统自动生成, 需要拷贝到这里
   app-secret: yAp7nmR8i1yRG0df2mp2ZWNOpZPm325G
-  # 配置Server的访问地址（如果没有改过的话，默认是127.0.0.1:8080）
+  # 配置Server的访问地址（如果没有改过的话, 默认是127.0.0.1:8080）
   server-endpoint: ${SERVER_ENDPOINTS:127.0.0.1:8080}
   port: 7758
-  # 如果服务部署在docker且使用bridge模式做了端口映射，则需要配置external-host和external-port，值分别为主机的ip和映射到宿主机上的端口
+  # 如果服务部署在docker且使用bridge模式做了端口映射, 则需要配置external-host和external-port, 值分别为主机的ip和映射到宿主机上的端口
   # external-host: 127.0.0.1
   # external-port: 17758
 ```
@@ -56,7 +56,7 @@ public class MyProcessor extends JavaProcessor {
 
 ## 接入验证
 
-1. 启动项目，如果打印下面的日志说明应用连接 Server 成功了
+1. 启动项目, 如果打印下面的日志说明应用连接 Server 成功了
 
 ```
 [PowerScheduler] registered successfully
@@ -70,10 +70,10 @@ public class MyProcessor extends JavaProcessor {
 
 3. 启用任务
 
-任务新建成功后默认是禁用状态，建议先通过 `运行一次` 按钮来验证效果，确认无误后再 `启用` 任务
+任务新建成功后默认是禁用状态, 建议先通过 `运行一次` 按钮来验证效果, 确认无误后再 `启用` 任务
 
 ![](../resources/任务启用.png)
 
-4. 在任务执行记录中，可以查看任务是否成功创建
+4. 在任务执行记录中, 可以查看任务是否成功创建
 
 ![](../resources/任务执行记录.png)

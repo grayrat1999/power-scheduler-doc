@@ -3,7 +3,7 @@
 ## 前置条件
 
 1. 使用 Java8 及以上
-2. 在控制台创建应用，获取 app-code 和 app-secret
+2. 在控制台创建应用, 获取 app-code 和 app-secret
 
 ## 系统接入
 
@@ -17,7 +17,7 @@
 </dependency>
 ```
 
-2.在 `resources` 目录下创建配置文件 `power-scheduler-worker.properties`，文件内容如下：
+2.在 `resources` 目录下创建配置文件 `power-scheduler-worker.properties`, 文件内容如下：
 
 ```properties
 power-scheduler-worker.enabled=true
@@ -27,7 +27,7 @@ power-scheduler-worker.app-code=appCode
 power-scheduler-worker.app-secret=2mU6Qs9OzPeKHAZSF3UlxBjfYHkgZROF
 power-scheduler-worker.server-endpoint=127.0.0.1:8080
 power-scheduler-worker.port=7758
-# 如果服务部署在docker且使用bridge模式做了端口映射，则需要配置external-host和external-port，值分别为主机的ip和映射到宿主机上的端口
+# 如果服务部署在docker且使用bridge模式做了端口映射, 则需要配置external-host和external-port, 值分别为主机的ip和映射到宿主机上的端口
 #power-scheduler-worker.external-host=127.0.0.1
 #power-scheduler-worker.external-port=7758
 ```
@@ -70,7 +70,7 @@ public static void main(String[] args) {
 
 ## 接入验证
 
-1. 启动服务，如果打印下面的日志说明应用连接 Server 成功了
+1. 启动服务, 如果打印下面的日志说明应用连接 Server 成功了
 
 ```
 [PowerScheduler] registered successfully
@@ -84,10 +84,10 @@ public static void main(String[] args) {
 
 3. 启用任务
 
-任务新建成功后默认是禁用状态，建议先通过 `运行一次` 按钮来验证效果，确认无误后再 `启用` 任务
+任务新建成功后默认是禁用状态, 建议先通过 `运行一次` 按钮来验证效果, 确认无误后再 `启用` 任务
 
 ![](../resources/任务启用.png)
 
-4. 在任务执行记录中，可以查看任务是否成功创建
+4. 在任务执行记录中, 可以查看任务是否成功创建
 
 ![](../resources/任务执行记录.png)
