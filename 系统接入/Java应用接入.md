@@ -35,9 +35,9 @@ power-scheduler-worker.port=7758
 3.编写定时任务
 
 ```java
-import org.grayrat.powerscheduler.worker.job.JobContext;
-import org.grayrat.powerscheduler.worker.processor.JavaProcessor;
-import org.grayrat.powerscheduler.worker.processor.ProcessResult;
+import tech.powerscheduler.worker.job.JobContext;
+import tech.powerscheduler.worker.processor.JavaProcessor;
+import tech.powerscheduler.worker.processor.ProcessResult;
 
 public class MyProcessor extends JavaProcessor {
 
@@ -53,18 +53,28 @@ public class MyProcessor extends JavaProcessor {
 4.在 main 方法中初始化 PowerSchedulerWorker
 
 ```java
-public static void initPowerSchedulerWorker() {
-    // 注册任务处理器
-    ProcessorRegistry.register(new MyProcessor());
-    // 读取配置文件初始化 PowerSchedulerWorker
-    InputStream inputStream = ClasspathUtil.getInputStream("power-scheduler-worker.properties");
-    PowerSchedulerWorkerProperties properties = PowerSchedulerWorkerProperties.load(inputStream);
-    PowerSchedulerWorker powerSchedulerWorker = new PowerSchedulerWorker(properties);
-    powerSchedulerWorker.init();
-}
+import tech.powerscheduler.worker.PowerSchedulerWorker;
+import tech.powerscheduler.worker.PowerSchedulerWorkerProperties;
+import tech.powerscheduler.worker.processor.ProcessorRegistry;
+import tech.powerscheduler.worker.util.ClasspathUtil;
 
-public static void main(String[] args) {
-  initPowerSchedulerWorker()
+import java.io.InputStream;
+
+public class Main {
+
+    public static void initPowerSchedulerWorker() {
+        // 注册任务处理器
+        ProcessorRegistry.register(new MyProcessor());
+        // 读取配置文件初始化 PowerSchedulerWorker
+        InputStream inputStream = ClasspathUtil.getInputStream("power-scheduler-worker.properties");
+        PowerSchedulerWorkerProperties properties = PowerSchedulerWorkerProperties.load(inputStream);
+        PowerSchedulerWorker powerSchedulerWorker = new PowerSchedulerWorker(properties);
+        powerSchedulerWorker.init();
+    }
+
+    public static void main(String[] args) {
+        initPowerSchedulerWorker();
+    }
 }
 ```
 
